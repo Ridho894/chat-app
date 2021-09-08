@@ -14,7 +14,7 @@
     <div class="wrapper">
         <section class="chat-area">
             <header>
-                <a href="users.html" class="back-icon"><i class="fas fa-arrow-left"></i></a>
+                <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
                 <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt="">
                 <div class="details">
