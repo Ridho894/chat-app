@@ -6,8 +6,10 @@
         $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
         $output = "";
 
-        $sql = "SELECT * FROM messages WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
-                OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC";
+        $sql = "SELECT * FROM messages 
+                LEFT JOIN users ON users.unique_id = messages.incoming_msg_id
+                WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
+                OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id";
         $query = mysqli_query($conn, $sql);
         if (mysqli_num_rows($query) > 0) {
             while($row = mysqli_fetch_assoc($query)) {
@@ -19,7 +21,7 @@
                                 </div>';
                 } else { // He is a msg receiver
                     $output .= '<div class="chat incoming">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                    <img src="../php/images/'. $row['img'] .'"
                                         alt="">
                                     <div class="details">
                                         <p>'. $row['msg'] .'</p>
