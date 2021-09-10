@@ -1,15 +1,29 @@
-<?php include_once '../header.php' ?>
+<?php 
+    session_start();
+    if (!isset($_SESSION['unique_id'])) {
+        header("location: login.php");
+    }
+?>
 
+<?php include_once '../header.php' ?>
 <body>
     <div class="wrapper">
         <section class="chat-area">
             <header>
+                <?php
+                    include_once "../php/config.php";
+                    $user_id = mysqli_real_escape_string($conn, $_GET['user_id']);
+                    $sql = mysqli_query($conn, "SELECT * FROM users WHERE unique_id = {$user_id}");
+                    if (mysqli_num_rows($sql) > 0) {
+                        $row = mysqli_fetch_assoc($sql);
+                    }
+                ?>
                 <a href="users.php" class="back-icon"><i class="fas fa-arrow-left"></i></a>
-                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt="">
+                <img src="../php/images/<?php echo $row['img'] ?>"
+                    alt=".img">
                 <div class="details">
-                    <span>Chat App</span>
-                    <p>Active Now</p>
+                    <span><?php echo $row['fname'] . " " . $row["lname"]; ?></span>
+                    <p><?php echo $row['status']; ?></p>
                 </div>
             </header>
             <div class="chat-box">
