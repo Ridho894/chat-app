@@ -8,14 +8,39 @@ searchBtn.onclick = () => {
     searchBtn.classList.toggle("active");
 }
 
-setInterval(() => {// Ajax Start
+searchBar.onkeyup = () => {
+    let searchTerm = searchBar.value;
+    if (searchTerm != "") {
+        searchBar.classList.add("active");
+    } else {
+        searchBar.classList.remove("active");
+    }
+    // Ajax Start
+    let xhr = new XMLHttpRequest(); // Creating XML OBJECT
+    xhr.open("POST", "../php/search.php", true);
+    xhr.onload = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                let data = xhr.response;
+                usersList.innerHTML = data;
+            }
+        }
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("searchTerm=" + searchTerm);
+}
+
+setInterval(() => {
+    // Ajax Start
     let xhr = new XMLHttpRequest(); // Creating XML OBJECT
     xhr.open("GET", "../php/users.php", true);
     xhr.onload = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 let data = xhr.response;
-                usersList.innerHTML = data;
+                if (!searchBar.classList.contains("active")) { // Active not contains in search bar then add this data
+                    usersList.innerHTML = data;
+                }
             }
         }
     }
