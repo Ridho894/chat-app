@@ -6,6 +6,9 @@
 ?>
 <?php include_once '../header.php' ?>
 <body>
+    <div class="navbar">
+        <i class="fas fa-snapchat"> ChatApp</i>
+    </div>
     <div class="wrapper">
         <section class="form login">
             <header>Realtime Chat App</header>
