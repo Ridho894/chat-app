@@ -7,7 +7,7 @@
 
 <?php include_once '../header.php' ?>
 <body>
-    <div class="wrapper">
+    <div class="wrapper desktop">
         <section class="users">
             <header>
             <?php

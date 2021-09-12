@@ -9,18 +9,22 @@
 body {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  /* justify-content: flex-start; */
+  /* min-height: 100vh; */
+  height: 100%;
+  /* min-height: ; */
   background: #f7f7f7;
 }
 .wrapper {
   background: #fff;
-  width: 450px;
-  border-radius: 16px;
+  width: 400px;
+  height: 100vh;
+  /* border-radius: 16px;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
-    0 32px 64px -48px rgba(0, 0, 0, 0.5);
+    0 32px 64px -48px rgba(0, 0, 0, 0.5); */
 }
-
+.wrapper.desktop {
+}
 /* Signup Form */
 .form {
   padding: 25px 30px;
@@ -198,6 +202,12 @@ form .name-details .field:last-child {
 .users-list {
   max-height: 350px;
   overflow-y: auto;
+}
+.contentt {
+  transition: 0.4s;
+}
+.contentt:hover {
+  background-color: gainsboro;
 }
 :is(.chat-box, .users-list)::-webkit-scrollbar {
   width: 0px;

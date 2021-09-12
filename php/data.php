@@ -17,7 +17,7 @@
         ($outgoing_id == $row2['outgoing_msg_id']) ? $you = 'You: ' : $you = "";
         // check user is online or offline
         ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
-        $output .= '<a href="chat.php?user_id='.$row['unique_id'].'">
+        $output .= '<a class="contentt" href="chat.php?user_id='.$row['unique_id'].'">
                         <div class="content">
                             <img src="../php/images/'. $row['img'] .'" alt="">
                             <div class="details">
