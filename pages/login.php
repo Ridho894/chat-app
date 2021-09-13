@@ -6,10 +6,10 @@
 ?>
 <?php include_once '../header.php' ?>
 <body>
-    <div class="navbar">
+    <!-- <div class="bg-green-200">
         <i class="fas fa-snapchat"> ChatApp</i>
-    </div>
-    <div class="wrapper">
+    </div> -->
+    <div class="wrapper shadow-xl m-auto h-auto">
         <section class="form login">
             <header>Realtime Chat App</header>
             <form action="#" autocomplete="off">

@@ -26,6 +26,9 @@
                     </div>
                 </div>
                 <a href="../php/logout.php?logout_id=<?php echo $row['unique_id'] ?>" class="logout">Logout</a>
+                <div class="absolute left-1/3 bg-green-700">
+                    <h1>nama</h1>
+                </div>
             </header>
             <div class="search">
                 <span class="text">Select an user to start chat</span>
