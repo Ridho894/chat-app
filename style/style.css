@@ -8,7 +8,7 @@
 }
 body {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   /* justify-content: center; */
   min-height: 100vh;
   height: 100%;
@@ -310,21 +310,20 @@ form .name-details .field:last-child {
   justify-content: space-between;
 }
 .typing-area input {
-  height: 45px;
-  width: calc(100% - 58px);
+  height: 55px;
+  width: calc(100% - 60px);
   font-size: 17px;
   border: 1px solid #ccc;
   padding: 0 13px;
-  border-radius: 5px 0 0 5px;
   outline: none;
 }
 .typing-area button {
-  width: 55px;
+  width: 55.5px;
+  height: 55px;
   border: none;
   outline: none;
   background: #333;
   color: #fff;
   font-size: 19px;
   cursor: pointer;
-  border-radius: 0 5px 5px 0;
 }

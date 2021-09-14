@@ -26,9 +26,6 @@
                     </div>
                 </div>
                 <a href="../php/logout.php?logout_id=<?php echo $row['unique_id'] ?>" class="logout">Logout</a>
-                <div class="absolute left-1/3 bg-green-700">
-                    <h1>nama</h1>
-                </div>
             </header>
             <div class="search">
                 <span class="text">Select an user to start chat</span>
@@ -39,6 +36,19 @@
                 
             </div>
         </section>
+    </div>
+    <div class="w-3/4 flex flex-col justify-between h-screen">
+        <div class="">
+            <h1>nama</h1>
+        </div>
+        <div class="">
+            <form action="#" class="typing-area">
+                <input type="text" name="outgoing_id" value="<?php echo $_SESSION['unique_id']; ?>" hidden>
+                <input type="text" name="incoming_id" value="<?php echo $user_id; ?>" hidden>
+                <input type="text" name="message" class="input-field" placeholder="Type a message here...">
+                <button><i class="fab fa-telegram-plane"></i></button>
+            </form>
+        </div>
     </div>
     <script src="../javascript/users.js"></script>
 </body>
