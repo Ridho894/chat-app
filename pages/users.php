@@ -7,7 +7,7 @@
 
 <?php include_once '../header.php' ?>
 <body>
-    <div class="wrapper desktop">
+    <div class="wrapper desktop z-10">
         <section class="users">
             <header>
             <?php
@@ -38,7 +38,7 @@
         </section>
     </div>
     <div class="w-3/4 flex flex-col justify-between h-screen">
-        <div class="">
+        <div class="bg-white shadow p-5">
             <h1>nama</h1>
         </div>
         <div class="">
